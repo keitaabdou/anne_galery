@@ -22,28 +22,30 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-between min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <div class="fixed top-0 left-0 px-6 py-4 sm:block">
-                <span class="text-6xl dark:text-white uppercase font-semibold">ANNE'S GALERY</span>
-            </div>
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-100 dark:text-white underline">Tableau de bord</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-100 dark:text-white underline">Connexion</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-100 dark:text-white underline">Inscription</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <h1 class="text-8xl dark:text-white">Anne's Galery</h1>
+            <div class="background-image grid grid-cols-1 m-auto" >
+                <div class="flex text-gray-100 pt-10 ">
+                    <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
+                        <h1 class="sm:text-white text-2xl uppercase font-bold text-shadow-md pb-14">
+                            Bienvenu a vous pour effectuer une recherche cliquer dans le champs
+                        </h1>
+                        <form action="" method="post" class="">
+                            @csrf {{--  permet de faire l'authenfication --}}
+                                <div class="mt-4">
+                                    <x-jet-input id="title" class="block mt-1 w-full" type="text" name="title" placeholder="Veuillez entres un mot"/>
+                                </div>
+                            <div class="row justify-content-center mt-5">
+                                <button type="submit" class="bg-blue-800 py-4 px-10 rounded-lg">Rechcerche</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
+
+
+
+
+
         </div>
     </body>
 </html>

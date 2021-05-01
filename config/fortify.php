@@ -46,10 +46,9 @@ return [
     |
     */
 
-    'username' => 'email',
+    'username' => 'username',
 
     'email' => 'email',
-
     /*
     |--------------------------------------------------------------------------
     | Home Path
